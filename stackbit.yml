@@ -1,0 +1,228 @@
+uploadDir: "images"
+sourceMapping:
+  - source:
+      fieldPath: "author.name"
+    target:
+      file: "data/author.json"
+      fieldPath: "name"
+  - source:
+      fieldPath: "author.name"
+    target:
+      file: "config.yml"
+      fieldPath: "params.header.title"
+  - source:
+      fieldPath: "author.email"
+    target:
+      file: "data/author.json"
+      fieldPath: "email"
+  - source:
+      fieldPath: "author.avatar"
+    target:
+      file: "data/author.json"
+      fieldPath: "avatar"
+  - source:
+      fieldPath: "social.links[0].url"
+    target:
+      file: "data/social.json"
+      fieldPath: "links[0].url"
+models:
+  config:
+    type: config
+    label: Global Site Config
+    hideContent: true
+    singleInstance: true
+    fields:
+      - type: enum
+        name: palette
+        label: Color Palette
+        description: The color palette of the theme.
+        options: [yellow, blue, green, red]
+        default: yellow
+      - type: object
+        name: header
+        label: Header Configuration
+        fields:
+          - type: string
+            name: title
+            label: Header Title
+            description: The title displayed on the left side if no logo image added. If value is not set, the author name will be used.
+          - type: string
+            name: tagline
+            label: Header Tagline
+            description: The tagline displayed on the left side.
+          - type: image
+            name: logo_img
+            label: Logo
+            description: The logo image displayed on the left side.
+          - type: image
+            name: bg_img
+            label: Background Image
+            description: The background image displayed on the left side.
+          - type: boolean
+            name: has_nav
+            label: Enable Navigation Menu
+            description: Display the navigation menu bar on the left side.
+            default: true
+          - type: boolean
+            name: has_social
+            label: Enable Social Links
+            description: Display social links on the left side.
+            default: true
+      - type: object
+        name: footer
+        label: Footer Configuration
+        fields:
+          - type: string
+            name: content
+            label: Footer Content
+            description: The copyright text displayed in the footer.
+          - type: list
+            name: links
+            label: Links
+            description: A list of links displayed in the footer.
+            items:
+              type: object
+              labelField: text
+              fields:
+                - type: string
+                  name: text
+                  label: Link text
+                - type: string
+                  name: url
+                  label: URL
+                  widget: url
+                - type: boolean
+                  name: new_window
+                  label: Open in new window
+                  default: true
+  social:
+    type: data
+    file: social.json
+    label: Social Links
+    fields:
+      - type: list
+        name: links
+        label: Social Links
+        description: A list of social links displayed on the left side.
+        items:
+          type: object
+          labelField: title
+          fields:
+            - type: string
+              name: type
+              label: Type
+              required: true
+            - type: string
+              name: title
+              label: Title
+            - type: string
+              name: icon
+              label: Icon
+              description: Font Awesome icon class name.
+              required: true
+            - type: string
+              name: url
+              label: URL
+              widget: url
+  author:
+    type: data
+    file: author.json
+    label: Author
+    fields:
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: email
+        label: Email
+      - type: image
+        name: avatar
+        label: Avatar
+  home:
+    type: page
+    label: Home
+    template: home
+    file: index.md
+    hideContent: true
+    singleInstance: true
+    fields:
+      - type: string
+        name: title
+        label: Title
+        description: The title of the page.
+        required: true
+  contact:
+    type: page
+    label: Contact
+    template: contact
+    file: contact.md
+    singleInstance: true
+    fields:
+      - type: string
+        name: title
+        label: Title
+        description: The title of the page.
+        required: true
+      - type: string
+        name: subtitle
+        label: Subtitle
+        description: The text shown just below the page title.
+      - type: image
+        name: img_path
+        label: Image
+        description: The image shown on the left side. If no image added, the default image specified in Header Configuration is displayed.
+  page:
+    type: page
+    label: Page
+    template: page
+    exclude: posts/**
+    fields:
+      - type: string
+        name: title
+        label: Title
+        description: The title of the page.
+        required: true
+      - type: string
+        name: subtitle
+        label: Subtitle
+        description: The text shown just below the page title.
+      - type: image
+        name: img_path
+        label: Image
+        description: The image shown on the left side. If no image added, the default image specified in Header Configuration is displayed.
+  post:
+    type: page
+    label: Post
+    template: post
+    folder: posts
+    fields:
+      - type: string
+        name: title
+        label: Title
+        description: The title of the post.
+        required: true
+      - type: string
+        name: subtitle
+        label: Subtitle
+        description: The text shown just below the post title.
+      - type: date
+        name: date
+        label: Date
+        required: true
+      - type: image
+        name: thumb_img_path
+        label: Featured Image
+        description: The image shown in the blog feed.
+      - type: image
+        name: content_img_path
+        label: Alternative Featured Image
+        description: The image shown on the left side in the single post. If no image added, the default image specified in Header Configuration is displayed.
+      - type: string
+        name: excerpt
+        label: Excerpt
+        description: The excerpt of the post displayed in the blog feed.
+      - type: boolean
+        name: hide_header
+        label: Hide header
+        description: Hide the left side in the single post.
+        default: false

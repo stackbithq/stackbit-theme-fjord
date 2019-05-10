@@ -1,0 +1,20 @@
+{% if site.menus.main and site.params.header.has_nav %}
+<nav id="main-navigation" class="site-navigation" aria-label="Main Navigation">
+  <div class="site-nav-wrap">
+    <div class="site-nav-inside">
+      <ul class="menu">
+        {% for item in site.menus.main %}
+        <li class="menu-item {% if page.url == item.url %} current-menu-item{% endif %}">
+          <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        </li>
+        {% endfor %}
+      </ul><!-- .menu -->
+      {% if site.params.header.has_social %}
+      {% include "social.html" %}
+      {% endif %}
+    </div><!-- .site-nav-inside -->
+  </div><!-- .site-nav-wrap -->
+</nav><!-- .site-navigation -->
+<button id="menu-toggle" class="menu-toggle"><span class="screen-reader-text">Menu</span><span class="icon-menu"
+    aria-hidden="true"></span></button>
+{% endif %}

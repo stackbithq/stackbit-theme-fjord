@@ -1,0 +1,85 @@
+{% extends "body.html" %}
+
+{% block content %}
+
+  {% if page.hide_header == true %}
+    {% include "header_alt.html" %}
+  {% else %}
+  <header id="masthead" class="site-header">
+    {% if page.content_img_path %}
+    <style type="text/css">
+      .site-header-bg {
+        background-image:url("{{ page.content_img_path | relative_url }}");
+      }
+    </style>
+    <div id="header-bg" class="site-header-bg"></div>
+    {% elif site.params.header.bg_img %}
+    <style type="text/css">
+      .site-header-bg {
+        background-image:url("{{ site.params.header.bg_img | relative_url }}");
+      }
+    </style>
+    <div id="header-bg" class="site-header-bg"></div>
+    {% endif %}
+    <div class="site-header-scroll">
+      <div class="site-header-inside">
+        <div class="site-header-vertical">
+          {% include "branding.html" %}
+          {% include "navigation.html" %}
+        </div><!-- .site-header-vertical -->
+      </div><!-- .site-header-inside -->
+    </div><!-- .site-header-scroll -->
+  </header><!-- .site-header -->
+  {% endif %}
+
+  <div id="content" class="site-content">
+    <main id="main" class="site-main inner">
+
+      <article class="post post-full">
+        <header class="post-header">
+          <h1 class="post-title">{{ page.title }}</h1>
+          <div class="post-meta">
+            <time class="published"
+              datetime="{{page.date | date_format("%Y-%m-%d %H:%M") }}">{{page.date | date_format("%A, %B %e, %Y") }}</time>
+          </div>
+        </header><!-- .post-header -->
+        {% if page.subtitle %}
+        <div class="post-subtitle">
+          {{ page.subtitle | safe }}
+        </div><!-- .post-subtitle -->
+        {% endif %}
+        <div class="post-content">
+          {{ page.content }}
+        </div><!-- .post-content -->
+      </article><!-- .post -->
+
+      <!-- Next/previous post navigation TBD -->
+      <!--
+      <nav class="post-navigation">
+        <h2 class="post-nav-title">Read Next</h2>
+        <article class="post">
+          <header class="post-header">
+            <h3 class="post-title"><a href="#" rel="bookmark">Previous Post Title</a></h3>
+            <div class="post-meta">
+              Published on <time class="published" datetime="">Previous post date</time>
+            </div>
+          </header>
+        </article>
+        <article class="post">
+          <header class="post-header">
+            <h3 class="post-title"><a href="#" rel="bookmark">Next Post Title</a></h3>
+            <div class="post-meta">
+              Published on <time class="published" datetime="">Next post date</time>
+            </div>
+          </header>
+        </article>
+      </nav>
+      -->
+
+    </main><!-- .site-main -->
+
+    {% include "footer.html" %}
+
+  </div><!-- .site-content -->
+
+{% endblock %}

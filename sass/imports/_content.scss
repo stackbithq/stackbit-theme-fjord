@@ -1,0 +1,153 @@
+/**
+ * Content
+ * ----------------------------------------------------------------------------
+ */
+.post {
+  margin-bottom: 3.33333em;
+}
+
+.post-header {
+  margin-bottom: 2.5em;
+}
+
+.post-title {
+  margin-bottom: 0.66667rem;
+
+  a {
+    border: 0;
+    color: inherit;
+
+    &:hover {
+      color: _palette(primary);
+    }
+  }
+}
+
+.post-meta {
+  color: _palette(meta);
+  font-size: 0.88889rem;
+}
+
+.post-thumbnail {
+  border: 0;
+  display: block;
+  margin-bottom: 2.5em;
+
+  img {
+    width: 100%;
+  }
+}
+
+.post-subtitle {
+  color: _palette(secondary);
+  font-size: 1.33333rem;
+  line-height: 1.5;
+  margin-bottom: 2.5rem;
+}
+
+.read-more-link {
+  color: _palette(secondary);
+  display: inline-block;
+  font-size: 0.88889rem;
+  font-weight: bold;
+  padding: 0.3em 24px 0.3em 0;
+  position: relative;
+
+  .icon-arrow-right {
+    left: auto;
+    margin-left: 0;
+    margin-right: 2px;
+    right: 0;
+  }
+}
+
+.post-full:not(.page) .post-header {
+  text-align: center;
+}
+
+.post-feed {
+  .post {
+    border-bottom: 1px dashed _palette(border);
+    padding-bottom: 1.66667em;
+
+    &:last-child {
+      border: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  .post-header,
+  .post-thumbnail {
+    margin-bottom: 1.66667em;
+  }
+
+  .post-title {
+    font-size: 1.66667rem;
+  }
+
+  .post-meta {
+    font-size: 14px;
+  }
+}
+
+/* Pagination */
+.pagination {
+  border-top: 1px dashed _palette(border);
+  margin: 3.33333em 0 1.66667em;
+  padding-top: 3.33333em;
+
+  .nav-links {
+    padding: 0 60px;
+    position: relative;
+    text-align: center;
+  }
+
+  .page-number {
+    color: _palette(meta);
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 0.67857em 0;
+  }
+
+  .newer-posts,
+  .older-posts {
+    height: 40px;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 45px;
+  }
+
+  .older-posts {
+    left: 0;
+  }
+
+  .newer-posts {
+    right: 0;
+  }
+}
+
+/* Post navigation */
+.post-navigation {
+  margin-bottom: 3.33333rem;
+
+  .post-nav-title {
+    font-size: 1rem;
+    margin: 0 0 1.66667rem;
+  }
+
+  .post,
+  .post-header {
+    margin-bottom: 1.66667em;
+  }
+
+  .post-title {
+    font-size: 1.33333rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .post-meta {
+    font-size: 14px;
+  }
+}

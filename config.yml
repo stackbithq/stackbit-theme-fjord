@@ -1,0 +1,23 @@
+baseurl: "/"
+title: "Stackbit Fjord Theme"
+main_js: "assets/js/main.js"
+params:
+  header:
+    logo_img: "images/logo.png"
+    tagline: Minimal and clean blog theme
+    bg_img: "images/header-bg.jpg"
+    has_nav: true
+    has_social: true
+  footer:
+    content: "&copy; Stackbit-Fjord. All rights reserved."
+    links:
+      - text: Made with Stackbit
+        url: https://www.stackbit.com
+        new_window: true
+  palette: yellow
+sass:
+  input_file: sass/main.scss.njk
+  output_file: assets/css/main.css
+  indentWidth: 4
+  outputStyle: nested
+  precision: 10

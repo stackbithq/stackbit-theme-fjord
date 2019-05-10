@@ -1,0 +1,19 @@
+/**
+ * Header bg animation
+ * ----------------------------------------------------------------------------
+ */
+.site-header {
+  .site-header-bg,
+  .site-header-inside {
+    opacity: 0;
+    -webkit-transition: opacity .5s cubic-bezier(0.28, 0.12, 0.22, 1);
+    transition: opacity .5s cubic-bezier(0.28, 0.12, 0.22, 1);
+  }
+
+  &.bg--loaded {
+    .site-header-bg,
+    .site-header-inside {
+      opacity: 1;
+    }
+  }
+}
