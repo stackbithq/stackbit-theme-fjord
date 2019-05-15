@@ -1,4 +1,4 @@
-version: v0.2.34
+stackbitVersion: "~0.2.34"
 uploadDir: "images"
 sourceMapping:
   - source:
