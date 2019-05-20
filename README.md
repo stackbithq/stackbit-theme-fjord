@@ -1,8 +1,8 @@
 # Fjord - Stackbit Theme
 A minimal blogging theme.
 
-[Live Demo](https://themes.stackbit.com/demos/fjord/) - 
-[New Fjord Site](http://app.stackbit.com/wizard?theme=fjord)
+[🖥️ Live Demo](https://themes.stackbit.com/demos/fjord/) - 
+[🚀 New Fjord Site](http://app.stackbit.com/wizard?theme=fjord)
 
 ![](stackbit/images/demo-1024x768.png "")
 
