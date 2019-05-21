@@ -1,7 +1,7 @@
 # Fjord - Stackbit Theme
 A minimal blogging theme.
 
-🖥️ [Live Demo](https://themes.stackbit.com/demos/fjord/) &nbsp;  &nbsp; 🚀 [New Fjord Site](http://app.stackbit.com/wizard?theme=fjord)
+🖥️ [Live Demo](https://themes.stackbit.com/demos/fjord/) &nbsp; - &nbsp; 🚀 [New Fjord Site](http://app.stackbit.com/wizard?theme=fjord) &nbsp; - &nbsp; ⚙️ [Fork](https://github.com/stackbithq/stackbit-theme-fjord/)
 
 ![](stackbit/images/demo-1024x768.png "")
 
@@ -11,7 +11,7 @@ Taking inspiration from travel and nature, Fjord is a cleanly designed blog them
 
 For those unfamiliar with Stackbit here's how it works -
 
-This Theme was built to work with Static Site Generators and Headless CMS, Stackbit supports a myriad of different options so you can use the tools you like or pickup new ones.
+Fjord is built to work with Static Site Generators and Headless CMS, Stackbit supports a myriad of different options so you can use the tools you like or try new ones.
 
 Whehter you like Jekyll, Hugo or want to learn about Gatsby.
 
