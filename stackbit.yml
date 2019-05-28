@@ -120,7 +120,7 @@ models:
             - type: string
               name: type
               label: Type
-              required: true
+              hidden: true
             - type: string
               name: title
               label: Title

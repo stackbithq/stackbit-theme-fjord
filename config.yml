@@ -1,6 +1,6 @@
 baseurl: "/"
 title: "Stackbit Fjord Theme"
-main_js: "assets/js/main.js"
+page_load_js: "assets/js/main.js"
 params:
   header:
     logo_img: "images/logo.png"

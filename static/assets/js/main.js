@@ -17,6 +17,8 @@ if (menuToggle) {
     e.preventDefault();
   }, false);
 
+  document.body.classList.remove('menu--opened');
+
   window.addEventListener('resize', function () {
     if (menuToggle.offsetParent === null) {
       document.body.classList.remove('menu--opened');
