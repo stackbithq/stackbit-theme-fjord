@@ -1,5 +1,13 @@
 stackbitVersion: "~0.2.34"
 uploadDir: "images"
+metadata:
+  title: Fjord
+  description: A minimal blogging theme
+  author: Stackbit
+  authorURL: 'https://www.stackbit.com'
+  images:
+    small: images/demo-256x192.png
+    large: images/demo-1024x768.png
 sourceMapping:
   - source:
       fieldPath: "author.name"
