@@ -2,14 +2,14 @@
 
 {% block content %}
 
-  {% if page.hide_header == true %}
+  {% if page.params.hide_header == true %}
     {% include "header_alt.html" %}
   {% else %}
   <header id="masthead" class="site-header">
-    {% if page.content_img_path %}
+    {% if page.params.content_img_path %}
     <style type="text/css">
       .site-header-bg {
-        background-image:url("{{ page.content_img_path | relative_url }}");
+        background-image:url("{{ page.params.content_img_path | relative_url }}");
       }
     </style>
     <div id="header-bg" class="site-header-bg"></div>
@@ -37,15 +37,15 @@
 
       <article class="post post-full">
         <header class="post-header">
-          <h1 class="post-title">{{ page.title }}</h1>
+          <h1 class="post-title">{{ page.params.title }}</h1>
           <div class="post-meta">
             <time class="published"
               datetime="{{page.date | date_format("%Y-%m-%d %H:%M") }}">{{page.date | date_format("%A, %B %e, %Y") }}</time>
           </div>
         </header><!-- .post-header -->
-        {% if page.subtitle %}
+        {% if page.params.subtitle %}
         <div class="post-subtitle">
-          {{ page.subtitle | safe }}
+          {{ page.params.subtitle | safe }}
         </div><!-- .post-subtitle -->
         {% endif %}
         <div class="post-content">

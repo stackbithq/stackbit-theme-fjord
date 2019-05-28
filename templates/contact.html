@@ -3,10 +3,10 @@
 {% block content %}
 
 <header id="masthead" class="site-header">
-  {% if page.img_path %}
+  {% if page.params.img_path %}
   <style type="text/css">
     .site-header-bg {
-      background-image:url("{{ page.img_path | relative_url }}");
+      background-image:url("{{ page.params.img_path | relative_url }}");
     }
   </style>
   <div id="header-bg" class="site-header-bg"></div>
@@ -33,11 +33,11 @@
 
     <article class="post page post-full">
       <header class="post-header">
-        <h1 class="post-title">{{ page.title }}</h1>
+        <h1 class="post-title">{{ page.params.title }}</h1>
       </header><!-- .post-header -->
-      {% if page.subtitle %}
+      {% if page.params.subtitle %}
       <div class="post-subtitle">
-        {{ page.subtitle | safe }}
+        {{ page.params.subtitle | safe }}
       </div><!-- .post-subtitle -->
       {% endif %}
       <div class="post-content">
