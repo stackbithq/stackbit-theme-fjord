@@ -38,8 +38,6 @@ models:
   config:
     type: config
     label: Global Site Config
-    hideContent: true
-    singleInstance: true
     fields:
       - type: enum
         name: palette
