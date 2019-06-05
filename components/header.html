@@ -1,0 +1,15 @@
+<header id="masthead" class="site-header">
+  {% if include_dict.img_path %}
+  <div id="header-bg" class="site-header-bg" style="background-image:url('{{ include_dict.img_path | relative_url }}')"></div>
+  {% elif include_dict.site.params.header.bg_img %}
+  <div id="header-bg" class="site-header-bg" style="background-image:url('{{ include_dict.site.params.header.bg_img | relative_url }}')"></div>
+  {% endif %}
+  <div class="site-header-scroll">
+    <div class="site-header-inside">
+      <div class="site-header-vertical">
+        {% include "branding.html" %}
+        {% include "navigation.html" %}
+      </div><!-- .site-header-vertical -->
+    </div><!-- .site-header-inside -->
+  </div><!-- .site-header-scroll -->
+</header><!-- .site-header -->
