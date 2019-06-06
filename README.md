@@ -1,7 +1,7 @@
 # Fjord - Stackbit Theme
 A minimal blogging theme for Stackbit - Build modern sites in minutes with any Static Site Generator and CMS combo.
 
-🖥️ [Live Demo](https://themes.stackbit.com/demos/fjord/) &nbsp; &nbsp; 🚀 [New Fjord Site](http://app.stackbit.com/wizard?theme=fjord) &nbsp; &nbsp; ⚙️ [Fork](https://github.com/stackbithq/stackbit-theme-fjord/)
+🖥️ [Live Demo](https://themes.stackbit.com/demos/fjord/) &nbsp; &nbsp; 🚀 [New Fjord Site](http://app.stackbit.com/wizard?theme=fjord) &nbsp; &nbsp; ⚙️ [Fork](https://github.com/stackbithq/stackbit-theme-fjord/fork)
 
 ![](stackbit/images/demo-1024x768.png "")
 
