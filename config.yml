@@ -3,8 +3,9 @@ title: "Stackbit Fjord Theme"
 page_load_js: "assets/js/main.js"
 params:
   header:
-    logo_img: "images/logo.png"
+    title: Fjord
     tagline: Minimal and clean blog theme
+    logo_img: "images/logo.png"
     bg_img: "images/header-bg.jpg"
     has_nav: true
     has_social: true

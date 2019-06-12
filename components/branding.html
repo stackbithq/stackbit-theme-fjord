@@ -1,11 +1,9 @@
 <div class="site-branding">
   {% if site.params.header.logo_img %}
-  {% if not site.params.header.title %}
   <p class="site-logo">
     <a href='{{ "/" | relative_url }}'><img src="{{ site.params.header.logo_img | relative_url }}"
         alt="Logo" /></a>
   </p>
-  {% endif %}
   {% endif %}
   {% if page.template == "home" %}
   <h1 class="site-title"><a href='{{ "/" | relative_url }}'>{{ site.params.header.title }}</a></h1>
