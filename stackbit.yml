@@ -4,10 +4,15 @@ metadata:
   title: Fjord
   description: A minimal blogging theme
   author: Stackbit
-  authorURL: 'https://www.stackbit.com'
+  authorURL: "https://www.stackbit.com"
   images:
     small: images/demo-256x192.png
     large: images/demo-1024x768.png
+stackbit_banner:
+  show_banner: true
+  name: "Fjord"
+  launch_url: "http://app.stackbit.com/wizard?theme=fjord"
+  github_url: "https://github.com/stackbithq/stackbit-theme-fjord"
 sourceMapping:
   - source:
       fieldPath: "author.name"
