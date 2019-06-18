@@ -1,44 +1,44 @@
-stackbitVersion: "~0.2.34"
-uploadDir: "images"
+stackbitVersion: ~0.2.34
+uploadDir: images
 metadata:
   title: Fjord
   description: A minimal blogging theme
   author: Stackbit
-  authorURL: "https://www.stackbit.com"
+  authorURL: 'https://www.stackbit.com'
   images:
     small: images/demo-256x192.png
     large: images/demo-1024x768.png
 stackbit_banner:
   show_banner: true
-  name: "Fjord"
-  launch_url: "http://app.stackbit.com/wizard?theme=fjord"
-  github_url: "https://github.com/stackbithq/stackbit-theme-fjord"
+  name: Fjord
+  launch_url: 'https://app.stackbit.com/wizard?theme=fjord'
+  github_url: 'https://github.com/stackbithq/stackbit-theme-fjord'
 sourceMapping:
   - source:
-      fieldPath: "author.name"
+      fieldPath: author.name
     target:
-      file: "data/author.json"
-      fieldPath: "name"
+      file: data/author.json
+      fieldPath: name
   - source:
-      fieldPath: "author.name"
+      fieldPath: author.name
     target:
-      file: "config.yml"
-      fieldPath: "params.header.title"
+      file: config.yml
+      fieldPath: params.header.title
   - source:
-      fieldPath: "author.email"
+      fieldPath: author.email
     target:
-      file: "data/author.json"
-      fieldPath: "email"
+      file: data/author.json
+      fieldPath: email
   - source:
-      fieldPath: "author.avatar"
+      fieldPath: author.avatar
     target:
-      file: "data/author.json"
-      fieldPath: "avatar"
+      file: data/author.json
+      fieldPath: avatar
   - source:
-      fieldPath: "social.links[0].url"
+      fieldPath: 'social.links[0].url'
     target:
-      file: "data/social.json"
-      fieldPath: "links[0].url"
+      file: data/social.json
+      fieldPath: 'links[0].url'
 models:
   config:
     type: config
@@ -48,7 +48,11 @@ models:
         name: palette
         label: Color Palette
         description: The color palette of the theme.
-        options: [yellow, blue, green, red]
+        options:
+          - yellow
+          - blue
+          - green
+          - red
         default: yellow
       - type: object
         name: header
@@ -57,7 +61,9 @@ models:
           - type: string
             name: title
             label: Header Title
-            description: The title displayed on the left side if no logo image added. If value is not set, the author name will be used.
+            description: >-
+              The title displayed on the left side if no logo image added. If
+              value is not set, the author name will be used.
           - type: string
             name: tagline
             label: Header Tagline
@@ -182,7 +188,9 @@ models:
       - type: image
         name: img_path
         label: Image
-        description: The image shown on the left side. If no image added, the default image specified in Header Configuration is displayed.
+        description: >-
+          The image shown on the left side. If no image added, the default image
+          specified in Header Configuration is displayed.
   page:
     type: page
     label: Page
@@ -201,7 +209,9 @@ models:
       - type: image
         name: img_path
         label: Image
-        description: The image shown on the left side. If no image added, the default image specified in Header Configuration is displayed.
+        description: >-
+          The image shown on the left side. If no image added, the default image
+          specified in Header Configuration is displayed.
   post:
     type: page
     label: Post
@@ -228,7 +238,10 @@ models:
       - type: image
         name: content_img_path
         label: Alternative Featured Image
-        description: The image shown on the left side in the single post. If no image added, the default image specified in Header Configuration is displayed.
+        description: >-
+          The image shown on the left side in the single post. If no image
+          added, the default image specified in Header Configuration is
+          displayed.
       - type: string
         name: excerpt
         label: Excerpt
