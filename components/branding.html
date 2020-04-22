@@ -2,10 +2,10 @@
   {% if site.params.header.logo_img %}
   <p class="site-logo">
     <a href='{{ "/" | relative_url }}'><img src="{{ site.params.header.logo_img | relative_url }}"
-        alt="Logo" /></a>
+        alt="{{ site.params.header.title }} Logo" /></a>
   </p>
   {% endif %}
-  {% if page.template == "home" %}
+  {% if page.layout == "home" %}
   <h1 class="site-title"><a href='{{ "/" | relative_url }}'>{{ site.params.header.title }}</a></h1>
   {% else %}
   <p class="site-title"><a href='{{ "/" | relative_url }}'>{{ site.params.header.title }}</a></p>

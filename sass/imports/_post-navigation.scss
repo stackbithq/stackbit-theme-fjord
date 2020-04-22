@@ -1,0 +1,62 @@
+/**
+ * Post Navigation
+ */
+.pagination {
+  border-top: 1px dashed _palette(border);
+  margin: 3.33333em 0 1.66667em;
+  padding-top: 3.33333em;
+
+  .nav-links {
+    padding: 0 60px;
+    position: relative;
+    text-align: center;
+  }
+
+  .page-number {
+    color: _palette(meta);
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 0.67857em 0;
+  }
+
+  .newer-posts,
+  .older-posts {
+    height: 40px;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 45px;
+  }
+
+  .older-posts {
+    left: 0;
+  }
+
+  .newer-posts {
+    right: 0;
+  }
+}
+
+.post-navigation {
+  margin-bottom: 3.33333rem;
+
+  .post-nav-title {
+    font-size: 1rem;
+    margin: 0 0 1.66667rem;
+  }
+
+  .post,
+  .post-header {
+    margin-bottom: 1.66667em;
+  }
+
+  .post-title {
+    font-size: 1.33333rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .post-meta {
+    font-size: 14px;
+  }
+}

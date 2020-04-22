@@ -1,11 +1,14 @@
 <footer id="colophon" class="site-footer inner">
-  <p class="site-info">
-    {{ site.params.footer.content | safe }}
-    &nbsp;
+  {% if site.params.footer.content or site.params.footer.links %}
+  <div class="site-footer-inside">
+    {% if site.params.footer.content %}
+    <span class="copyright">{{ site.params.footer.content | safe }}</span>
+    {% endif %}
     {% for link in site.params.footer.links %}
-    <a href="{{ link.url }}" {% if link.new_window %}target="_blank" rel="noopener"
-      {% endif %}>{{ link.text }}</a>.
+      <a href="{{ link.url }}" {% if link.new_window %}target="_blank" rel="noopener"
+      {% endif %}>{{ link.label }}</a>
     {% endfor %}
-  </p><!-- .site-info -->
+  </div><!-- .site-footer-inside -->
+  {% endif %}
   <a id="to-top" class="to-top" href="#page">To top <span class="icon-arrow-up" aria-hidden="true"></span></a>
 </footer><!-- .site-footer -->

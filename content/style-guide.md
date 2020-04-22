@@ -2,12 +2,8 @@
 title: Style Guide
 subtitle: >-
   The style guide provides you with a blueprint of default post and page styles. The style guide is also a great reference for suggested typographic treatment and styles for your content.
-img_path: images/style-guide.jpg
-menus:
-  main:
-    title: Style Guide
-    weight: 3
-template: page
+image: images/style-guide.jpg
+layout: page
 ---
 
 **This is a paragraph**. Paragraphs are usually represented in visual media as blocks of text separated from adjacent blocks by blank lines and/or first-line [indentation](https://en.wikipedia.org/wiki/Indentation_(typesetting)), but <abbr title="HyperText Markup Language">HTML</abbr> paragraphs can be any structural grouping of related content, such as images or form fields.

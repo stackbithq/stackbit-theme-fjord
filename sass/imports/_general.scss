@@ -1,6 +1,5 @@
 /**
  * General
- * ----------------------------------------------------------------------------
  */
 html {
   font-family: _font(primary);
@@ -107,7 +106,7 @@ pre {
   font-size: 0.88889rem;
   margin: 0 0 1.66667rem;
   overflow: auto;
-  padding: 1.5em 1.875em;
+  padding: 1.33333em;
   position: relative;
   white-space: pre;
 
@@ -214,14 +213,13 @@ th {
 /* Form fields */
 label {
   color: _palette(secondary);
+  display: block;
   font-size: 0.88889rem;
-}
 
-input[type=checkbox]+label,
-input[type=radio]+label {
-  cursor: pointer;
-  padding-left: 0.25em;
-  padding-right: 1em;
+  input[type=checkbox],
+  input[type=radio] {
+    margin-right: 0.25em;
+  }
 }
 
 input[type="text"],
@@ -243,7 +241,7 @@ textarea {
   font-weight: normal;
   line-height: 1.5;
   max-width: 100%;
-  padding: 0.5em 10px;
+  padding: 0.5em 0.75em;
   vertical-align: baseline;
   width: 100%;
 
@@ -266,7 +264,7 @@ button,
 input[type="submit"],
 input[type="button"],
 input[type="reset"],
-a.button {
+.button {
   background: _palette(secondary);
   border: 0;
   border-radius: 3px;
@@ -275,9 +273,8 @@ a.button {
   display: inline-block;
   font-size: 16px;
   font-weight: bold;
-  height: 3em;
-  line-height: 1.5;
-  padding: 0.25em 30px;
+  line-height: 1.2;
+  padding: 0.9em 30px;
   -webkit-transition: .3s ease;
   transition: .3s ease;
 
@@ -285,14 +282,9 @@ a.button {
   &:focus,
   &:active {
     background: _palette(primary);
+    color: #fff;
     outline: 0;
   }
-}
-
-a.button {
-  line-height: 1.2;
-  padding-bottom: 0.75em;
-  padding-top: 0.75em;
 }
 
 #menu-toggle {
@@ -306,12 +298,34 @@ a.button {
   width: 40px;
 }
 
-.contact-form {
-  label {
-    display: block;
-    margin-bottom: 0.25em;
-    padding-left: 10px;
-  }
+.form-row {
+  margin-bottom: 1em;
+}
+
+.form-submit {
+  margin-top: 1.66667em;
+}
+
+/* Placeholder text */
+::-webkit-input-placeholder {
+  color: _palette(meta);
+}
+
+::-moz-placeholder {
+  color: _palette(meta);
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: _palette(meta);
+}
+
+::-ms-input-placeholder {
+  color: _palette(meta);
+}
+
+::placeholder {
+  color: _palette(meta);
 }
 
 /* Videos, audios and embeds */
@@ -332,10 +346,12 @@ img {
   max-width: 100%;
 }
 
-.post-thumbnail img,
-.post-content img,
-.block img {
-  border-radius: 3px;
+.post-thumbnail,
+.post-content,
+.block {
+  img {
+    border-radius: 3px;
+  }
 }
 
 /* Text meant only for screen readers */
@@ -352,12 +368,14 @@ img {
 }
 
 /* Clearing floats */
-.post-content:after {
-  clear: both;
-}
+.post-content {
+  &:after {
+    clear: both;
+  }
 
-.post-content:before,
-.post-content:after {
-  content: "";
-  display: table;
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
 }

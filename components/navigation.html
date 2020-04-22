@@ -1,20 +1,32 @@
-{% if site.menus.main and site.params.header.has_nav %}
+{% if site.params.header.nav_links and site.params.header.has_nav or site.data.social.links and site.params.header.has_social %}
 <nav id="main-navigation" class="site-navigation" aria-label="Main Navigation">
   <div class="site-nav-wrap">
     <div class="site-nav-inside">
+
+      {% if site.params.header.nav_links and site.params.header.has_nav %}
       <ul class="menu">
-        {% for item in site.menus.main %}
-        <li class="menu-item {% if page.url == item.url %} current-menu-item{% endif %}">
-          <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        {% for item in site.params.header.nav_links %}
+        <li {{ classNames('menu-item', {'current-menu-item': page.url == item.url }) }}>
+          <a href="{{ item.url | relative_url }}" {% if item.new_window %}target="_blank" rel="noopener"{% endif %}>{{ item.label }}</a>
         </li>
         {% endfor %}
-      </ul><!-- .menu -->
-      {% if site.params.header.has_social %}
-      {% include "social.html" %}
+      </ul>
       {% endif %}
+
+      {% if site.data.social.links and site.params.header.has_social %}
+      <div class="social-links">
+        {% for link in site.data.social.links %}
+        {% if link %}
+        <a href="{{ link.url }}" target="_blank" rel="noopener"><span class="fab {{ link.icon }}"
+            aria-hidden="true"></span><span class="screen-reader-text">{{ link.title }}</span></a>
+        {% endif %}
+        {% endfor %}
+      </div><!-- .social-links -->
+      {% endif %}
+
     </div><!-- .site-nav-inside -->
   </div><!-- .site-nav-wrap -->
 </nav><!-- .site-navigation -->
-<button id="menu-toggle" class="menu-toggle"><span class="screen-reader-text">Menu</span><span class="icon-menu"
-    aria-hidden="true"></span></button>
+<button id="menu-toggle" class="menu-toggle"><span class="screen-reader-text">Menu</span><span class="icon-menu" aria-hidden="true"></span></button>
 {% endif %}
+
