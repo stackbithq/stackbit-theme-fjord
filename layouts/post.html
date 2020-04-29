@@ -5,7 +5,7 @@
   {% if page.params.hide_header == true %}
     {% include "header_alt.html" %}
   {% else %}
-    {% set include_dict = {'site': site, 'page': page, 'image': page.params.image} %}
+    {% set include_dict = {'site': site, 'page': page, 'image': page.params.content_img_path} %}
     {% include "header.html" %}
   {% endif %}
 

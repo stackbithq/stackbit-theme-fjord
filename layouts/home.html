@@ -19,9 +19,9 @@
                 datetime="{{post.date | date_format("%Y-%m-%d %H:%M") }}">{{ post.date | date_format("%B %d, %Y") }}</time>
             </div>
           </header><!-- .post-header -->
-          {% if post.params.thumb_image %}
+          {% if post.params.thumb_img_path %}
           <a class="post-thumbnail" href="{{ post.url | relative_url }}">
-            <img class="thumbnail" src="{{ post.params.thumb_image | relative_url }}" alt="{{ post.params.title }}" />
+            <img class="thumbnail" src="{{ post.params.thumb_img_path | relative_url }}" alt="{{ post.params.title }}" />
           </a>
           {% endif %}
           <div class="post-content">

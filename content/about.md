@@ -2,7 +2,7 @@
 title: About Me
 subtitle: >-
   This is a short page about me and my work
-image: images/about.jpg
+img_path: images/about.jpg
 layout: page
 ---
 

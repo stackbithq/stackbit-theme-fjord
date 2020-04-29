@@ -2,13 +2,13 @@
 title: Basic Rules For Walking In The Mountains
 excerpt: >-
   Hiking is sometimes referred to as such. This specifically refers to difficult walking through dense forest, undergrowth, or bushes, where forward progress requires pushing vegetation aside.
-date: 2019-04-09
-thumb_image: images/1.jpg
-image: images/1.jpg
+date: 2020-04-09
+thumb_img_path: images/1.jpg
+content_img_path: images/1.jpg
 layout: post
 ---
 
-![Hiking](/images/2.jpg)
+![Hiking](images/2.jpg)
 
 In the United States, Canada, the Republic of Ireland, and United Kingdom, **hiking** refers to walking outdoors on a trail, or off trail, for recreational purposes. A day hike refers to a hike that can be completed in a single day. However, in the United Kingdom, the word walking is also used, as well as rambling, while walking in mountainous areas is called hillwalking. In Northern England, Including the Lake District and Yorkshire Dales, fellwalking describes hill or mountain walks, as fell is the common word for both features there.
 

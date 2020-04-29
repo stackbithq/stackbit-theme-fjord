@@ -2,7 +2,7 @@
 
 {% block content %}
 
-  {% set include_dict = {'site': site, 'page': page, 'image': page.params.image} %}
+  {% set include_dict = {'site': site, 'page': page, 'image': page.params.img_path} %}
   {% include "header.html" %}
 
   <div id="content" class="site-content">
@@ -19,33 +19,19 @@
         {% endif %}
         <div class="post-content">
           {{ page.content }}
-          <form name="contactForm" method="POST" netlify-honeypot="bot-field" data-netlify="true" class="contact-form">
-            <p class="screen-reader-text">
+          <form name="{{ page.params.form_id }}" id="{{ page.params.form_id }}" {% if page.params.form_action %} action="{{ page.params.form_action }}" {% endif %}method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+            <div class="screen-reader-text">
               <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-            </p>
-            <p class="form-row">
-              <label>
-                Name
-                <input type="text" name="name" placeholder="Your name" required />
-              </label>
-            </p>
-            <p class="form-row">
-              <label>
-                Email
-                <input type="email" name="email" placeholder="Your email address" required />
-              </label>
-            </p>
-            <p class="form-row">
-              <label>
-                Message
-                <textarea name="message" placeholder="Your message" rows="7"></textarea>
-              </label>
-            </p>
-            <input type="hidden" name="form-name" value="contactForm" />
-            <p class="form-submit">
-              <button type="submit" class="button">Send Message</button>
-            </p>
-          </form><!-- .contact-form -->
+            </div>
+            <input type="hidden" name="form-name" value="{{ page.params.form_id }}" />
+            {% for field in page.params.form_fields %}
+              {% set include_dict = {'field': field} %}
+              {% include "form_field.html" %}
+            {% endfor %}
+            <div class="form-submit">
+              <button type="submit" class="button">{{ page.params.submit_label }}</button>
+            </div>
+          </form>
         </div><!-- .post-content -->
       </article><!-- .post -->
 

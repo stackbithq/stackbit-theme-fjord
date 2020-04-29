@@ -274,11 +274,29 @@ models:
         label: Excerpt
         description: The excerpt of the page displayed in meta data.
       - type: image
-        name: image
+        name: img_path
         label: Image
         description: >-
           The image shown on the left side. If no image added, the default image
           specified in Header Configuration is displayed.
+      - type: string
+        name: form_id
+        label: Form ID
+        description: A unique identifier of the form. Must not contain whitespace.
+        required: true
+      - type: string
+        name: form_action
+        label: Form Action
+        description: The path of your custom "success" page, if you want to replace the default success message.
+      - type: list
+        name: form_fields
+        label: Form Fields
+        items:
+          type: form_field
+      - type: string
+        name: submit_label
+        label: Submit Button Label
+        required: true
   page:
     type: page
     label: Page
@@ -299,7 +317,7 @@ models:
         label: Excerpt
         description: The excerpt of the page displayed in meta data.
       - type: image
-        name: image
+        name: img_path
         label: Image
         description: >-
           The image shown on the left side. If no image added, the default image
@@ -324,11 +342,11 @@ models:
         label: Date
         required: true
       - type: image
-        name: thumb_image
+        name: thumb_img_path
         label: Featured Image
         description: The image shown in the blog feed.
       - type: image
-        name: image
+        name: content_img_path
         label: Alternative Featured Image
         description: >-
           The image shown on the left side in the single post. If no image
@@ -360,4 +378,41 @@ models:
       - type: boolean
         name: new_window
         label: Open in new tab/window
+        default: false
+  form_field:
+    type: object
+    label: Form Field
+    labelField: name
+    fields:
+      - type: enum
+        name: type
+        label: Type
+        options:
+          - text
+          - email
+          - tel
+          - number
+          - checkbox
+          - textarea
+          - select
+        description: Type of the form field.
+        required: true
+      - type: string
+        name: name
+        label: Name
+        description: The name of the field, submitted with the form.
+        required: true
+      - type: string
+        name: label
+        label: Label
+        description: The caption of the field, shown above the field input.
+      - type: string
+        name: default_value
+        description: The default value for textual field types.
+      - type: list
+        name: options
+        description: The list of options, used only when the field type is "select".
+      - type: boolean
+        name: is_required
+        label: Is the field required?
         default: false

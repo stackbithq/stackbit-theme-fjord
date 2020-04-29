@@ -2,7 +2,7 @@
 
 {% block content %}
 
-  {% set include_dict = {'site': site, 'page': page, 'image': page.params.image} %}
+  {% set include_dict = {'site': site, 'page': page, 'image': page.params.img_path} %}
   {% include "header.html" %}
 
   <div id="content" class="site-content">
