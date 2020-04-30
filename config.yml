@@ -13,11 +13,11 @@ params:
       - label: Home
         url: /
       - label: About
-        url: /about
+        url: /about/
       - label: Style Guide
-        url: /style-guide
+        url: /style-guide/
       - label: Contact
-        url: /contact
+        url: /contact/
     has_social: true
   footer:
     content: "&copy; All rights reserved."
