@@ -49,8 +49,8 @@ sourceMapping:
   - source:
       fieldPath: 'social.links[0].url'
     target:
-      file: data/social.json
-      fieldPath: 'links[0].url'
+      file: config.yml
+      fieldPath: params.header.social_links[0].url
   - action: delete
     condition: 'context.author.name'
     target:
@@ -59,53 +59,53 @@ sourceMapping:
   - source:
       fieldPath: 'social.twitter.url'
     target:
-      file: data/social.json
-      fieldPath: links[0].url
+      file: config.yml
+      fieldPath: params.header.social_links[0].url
   - source:
       fieldPath: 'social.instagram.url'
     target:
-      file: data/social.json
-      fieldPath: links[1].url
+      file: config.yml
+      fieldPath: params.header.social_links[1].url
   - source:
       fieldPath: 'social.github.url'
     target:
-      file: data/social.json
-      fieldPath: links[2].url
+      file: config.yml
+      fieldPath: params.header.social_links[2].url
   - source:
       fieldPath: 'social.linkedin.url'
     target:
-      file: data/social.json
-      fieldPath: links[3].url
+      file: config.yml
+      fieldPath: params.header.social_links[3].url
   - source:
       fieldPath: 'social.devto.url'
     target:
-      file: data/social.json
-      fieldPath: links[4].url
+      file: config.yml
+      fieldPath: params.header.social_links[4].url
   - action: delete
     condition: 'context.social && !context.social.devto'
     target:
-      file: data/social.json
-      fieldPath: links[4]
+      file: config.yml
+      fieldPath: params.header.social_links[4]
   - action: delete
     condition: 'context.social && !context.social.linkedin'
     target:
-      file: data/social.json
-      fieldPath: links[3]
+      file: config.yml
+      fieldPath: params.header.social_links[3]
   - action: delete
     condition: 'context.social && !context.social.github'
     target:
-      file: data/social.json
-      fieldPath: links[2]
+      file: config.yml
+      fieldPath: params.header.social_links[2]
   - action: delete
     condition: 'context.social && !context.social.instagram'
     target:
-      file: data/social.json
-      fieldPath: links[1]
+      file: config.yml
+      fieldPath: params.header.social_links[1]
   - action: delete
     condition: 'context.social && !context.social.twitter'
     target:
-      file: data/social.json
-      fieldPath: links[0]
+      file: config.yml
+      fieldPath: params.header.social_links[0]
   - source:
       fieldPath: 'source.title'
     target:
@@ -179,6 +179,12 @@ models:
             label: Enable Social Links
             description: Display social links on the left side.
             default: true
+          - type: list
+            name: social_links
+            label: Social Links
+            description: List of social links on the left side.
+            items:
+              type: action
       - type: object
         name: footer
         label: Footer Configuration
@@ -193,35 +199,6 @@ models:
             description: List of links in the footer.
             items:
               type: action
-  social:
-    type: data
-    file: social.json
-    label: Social Links
-    fields:
-      - type: list
-        name: links
-        label: Social Links
-        description: A list of social links displayed on the left side.
-        items:
-          type: object
-          labelField: title
-          fields:
-            - type: string
-              name: type
-              label: Type
-              hidden: true
-            - type: string
-              name: title
-              label: Title
-            - type: string
-              name: icon
-              label: Icon
-              description: Font Awesome icon class name.
-              required: true
-            - type: string
-              name: url
-              label: URL
-              widget: url
   author:
     type: data
     file: author.json
@@ -375,6 +352,18 @@ models:
         label: URL
         required: true
         widget: url
+      - type: enum
+        name: type
+        label: Type
+        options:
+          - link
+          - icon
+        default: link
+        required: true
+      - type: string
+        name: icon_class
+        label: Icon
+        description: Font Awesome icon class name, used only when type is "icon".
       - type: boolean
         name: new_window
         label: Open in new tab/window

@@ -1,24 +1,29 @@
-{% if site.params.header.nav_links and site.params.header.has_nav or site.data.social.links and site.params.header.has_social %}
+{% if site.params.header.has_nav or site.params.header.has_social %}
 <nav id="main-navigation" class="site-navigation" aria-label="Main Navigation">
   <div class="site-nav-wrap">
     <div class="site-nav-inside">
 
-      {% if site.params.header.nav_links and site.params.header.has_nav %}
+      {% if site.params.header.has_nav %}
       <ul class="menu">
-        {% for item in site.params.header.nav_links %}
-        <li {{ classNames('menu-item', {'current-menu-item': page.url == item.url }) }}>
-          <a href="{{ item.url | relative_url }}" {% if item.new_window %}target="_blank" rel="noopener"{% endif %}>{{ item.label }}</a>
+        {% for action in site.params.header.nav_links %}
+        <li {{ classNames('menu-item', {'current-menu-item': page.url == action.url }) }}>
+          <a href="{{ action.url | relative_url }}"{% if action.new_window %} target="_blank" rel="noopener"{% endif %}>{{ action.label }}</a>
         </li>
         {% endfor %}
       </ul>
       {% endif %}
 
-      {% if site.data.social.links and site.params.header.has_social %}
+      {% if site.params.header.has_social %}
       <div class="social-links">
-        {% for link in site.data.social.links %}
-        {% if link %}
-        <a href="{{ link.url }}" target="_blank" rel="noopener"><span class="fab {{ link.icon }}"
-            aria-hidden="true"></span><span class="screen-reader-text">{{ link.title }}</span></a>
+        {% for action in site.params.header.social_links %}
+        {% if action %}
+        <a {{ classNames({'button-circle': action.type == 'icon'}) }} href="{{ action.url | relative_url }}"{% if action.new_window %} target="_blank" rel="noopener"{% endif %}>
+          {% if action.type == 'icon' and action.icon_class %}
+          <span class="fab {{ action.icon_class }}" aria-hidden="true"></span><span class="screen-reader-text">{{ action.label }}</span>
+          {% else %}
+          {{ action.label }}
+          {% endif %}
+        </a>
         {% endif %}
         {% endfor %}
       </div><!-- .social-links -->

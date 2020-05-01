@@ -6,7 +6,7 @@
   blockquote,
   .site-title a,
   .site-title a:hover,
-  .social-links a:hover {
+  .social-links .button-circle:hover {
     border-color: _palette(accent-blue);
   }
 
@@ -14,7 +14,7 @@
     border-color: currentColor;
   }
 
-  .social-links a {
+  .button-circle {
     border-color: _palette(meta);
   }
 }
@@ -24,7 +24,7 @@
   blockquote,
   .site-title a,
   .site-title a:hover,
-  .social-links a:hover {
+  .social-links .button-circle:hover {
     border-color: _palette(accent-green);
   }
 
@@ -32,7 +32,7 @@
     border-color: currentColor;
   }
 
-  .social-links a {
+  .button-circle {
     border-color: _palette(meta);
   }
 }
@@ -42,7 +42,7 @@
   blockquote,
   .site-title a,
   .site-title a:hover,
-  .social-links a:hover {
+  .social-links .button-circle:hover {
     border-color: _palette(accent-red);
   }
 
@@ -50,7 +50,7 @@
     border-color: currentColor;
   }
 
-  .social-links a {
+  .button-circle {
     border-color: _palette(meta);
   }
 }

@@ -123,7 +123,7 @@ blockquote {
   line-height: 1.5;
   margin: 2.5rem auto;
   max-width: 555px;
-  padding-left: 30px;
+  padding-left: 1.25em;
 
   &:first-child {
     margin-top: 0
@@ -169,7 +169,7 @@ dd {
 ul,
 ol {
   margin: 0 0 1.66667em;
-  padding: 0 0 0 1.66667em;
+  padding: 0 0 0 1.33333em;
 }
 
 li > ul,
@@ -258,44 +258,6 @@ select {
   height: 3em;
 }
 
-button,
-input[type="submit"],
-input[type="button"],
-input[type="reset"],
-.button {
-  background: _palette(secondary);
-  border: 0;
-  border-radius: 3px;
-  box-sizing: border-box;
-  color: #fff;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 1.2;
-  padding: 0.9em 30px;
-  -webkit-transition: .3s ease;
-  transition: .3s ease;
-
-  &:hover,
-  &:focus,
-  &:active {
-    background: _palette(primary);
-    color: #fff;
-    outline: 0;
-  }
-}
-
-#menu-toggle {
-  background: 0;
-  border: 0;
-  box-shadow: none;
-  color: inherit;
-  height: 40px;
-  padding: 0;
-  position: relative;
-  width: 40px;
-}
-
 .form-group {
   margin-bottom: 1em;
 }
@@ -351,6 +313,67 @@ input[type="reset"],
     position: absolute;
     top: 0;
   }
+}
+
+/* Buttons */
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+.button {
+  background: _palette(secondary);
+  border: 0;
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: #fff;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.2;
+  padding: 0.9em 30px;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: _palette(primary);
+    color: #fff;
+    outline: 0;
+  }
+}
+
+#menu-toggle {
+  background: 0;
+  border: 0;
+  box-shadow: none;
+  color: inherit;
+  height: 40px;
+  padding: 0;
+  position: relative;
+  width: 40px;
+}
+
+.button-circle {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 2px solid _palette(meta);
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 1em;
+  height: 2.22222em;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 2.22222em;
+  padding: 0;
+  position: relative;
+  width: 2.22222em;
 }
 
 /* Placeholder text */
