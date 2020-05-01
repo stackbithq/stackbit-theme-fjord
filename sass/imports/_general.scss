@@ -6,10 +6,6 @@ html {
   font-size: 112.5%;
   height: 100%;
   min-height: 100%;
-
-  @media only screen and (max-width: 600px) {
-    font-size: 100%;
-  }
 }
 
 body {
@@ -58,20 +54,20 @@ h2 {
 }
 
 h3 {
-  font-size: 1.33333rem;
+  font-size: 1.55556rem;
 }
 
 h4 {
-  font-size: 1.11111rem;
+  font-size: 1.33333rem;
 }
 
 h5 {
-  font-size: 0.88889rem;
+  font-size: 1.11111rem;
 }
 
 h6 {
-  font-size: 14px;
-  letter-spacing: 0.075em;
+  font-size: 0.88889em;
+  letter-spacing: 0.0625em;
   text-transform: uppercase;
 }
 
@@ -447,5 +443,19 @@ img {
   &:after {
     content: "";
     display: table;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 100%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.77778rem;
   }
 }

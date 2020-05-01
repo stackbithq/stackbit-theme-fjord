@@ -24,11 +24,6 @@ sourceMapping:
   - source:
       fieldPath: author.name
     target:
-      file: data/author.json
-      fieldPath: name
-  - source:
-      fieldPath: author.name
-    target:
       file: config.yml
       fieldPath: params.header.title
   - source:
@@ -36,16 +31,6 @@ sourceMapping:
     target:
       file: config.yml
       fieldPath: params.header.tagline
-  - source:
-      fieldPath: author.email
-    target:
-      file: data/author.json
-      fieldPath: email
-  - source:
-      fieldPath: author.avatar
-    target:
-      file: data/author.json
-      fieldPath: avatar
   - source:
       fieldPath: 'social.links[0].url'
     target:
@@ -199,20 +184,6 @@ models:
             description: List of links in the footer.
             items:
               type: action
-  author:
-    type: data
-    file: author.json
-    label: Author
-    fields:
-      - type: string
-        name: name
-        label: Name
-      - type: string
-        name: email
-        label: Email
-      - type: image
-        name: avatar
-        label: Avatar
   home:
     type: page
     label: Home

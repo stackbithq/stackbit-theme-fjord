@@ -37,7 +37,7 @@
 }
 
 .site-branding {
-  margin-right: 15px;
+  margin-right: 45px;
 }
 
 .site-logo {
@@ -54,7 +54,7 @@
 
 .site-title {
   color: #fff;
-  font-size: 1.88889rem;
+  font-size: 1.66667rem;
   font-weight: bold;
   line-height: 1.2;
   margin: 0;
@@ -198,14 +198,6 @@
     }
   }
 
-  .site-title {
-    font-size: 2.66667rem;
-  }
-
-  .site-description {
-    font-size: 1.11111rem;
-  }
-
   #menu-toggle {
     display: none;
   }
@@ -221,10 +213,29 @@
   }
 }
 
+@media only screen and (min-width: 1001px) {
+  .site-title {
+    font-size: 1.88889rem;
+  }
+}
+
 @media only screen and (min-width: 1501px) {
   .site-header,
   .site-header-alt {
     width: 450px;
+  }
+
+  .site-header-inside {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .site-title {
+    font-size: 2.66667rem;
+  }
+
+  .site-description {
+    font-size: 1.11111rem;
   }
 }
 
