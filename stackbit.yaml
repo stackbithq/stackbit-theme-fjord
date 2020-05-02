@@ -107,6 +107,12 @@ sourceMapping:
     target:
       file: config.yml
       fieldPath: params.footer.links[1].new_window
+  - source:
+      value: 'link'
+    condition: 'context.source.url'
+    target:
+      file: config.yml
+      fieldPath: params.footer.links[1].type
 models:
   config:
     type: config
