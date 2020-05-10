@@ -20,6 +20,14 @@ stackbit_banner:
   name: Fjord
   create_url: 'https://app.stackbit.com/create?theme=fjord'
   github_url: 'https://github.com/stackbithq/stackbit-theme-fjord'
+pageData:
+  - pagePath: "/"
+    initialExpandedPaths:
+      - '[1]'
+      - '[1].fields.palette'
+      - '[2]'
+      - '[2].fields.title'
+      - '[2].fields.excerpt'
 sourceMapping:
   - source:
       fieldPath: author.name
