@@ -1,6 +1,6 @@
 # Fjord
 
-A sleek SaaS theme for Stackbit. [Live Demo](https://themes.stackbit.com/demos/fjord)
+A minimal blogging theme for Stackbit. [Live Demo](https://themes.stackbit.com/demos/fjord)
 
 Click the button below to use this theme in Gatsby, Hugo or Jekyll via the Stackbit site builder:
 
