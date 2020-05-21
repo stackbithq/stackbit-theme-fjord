@@ -14,29 +14,13 @@ Click the button below to use this theme in Gatsby, Hugo or Jekyll via the Stack
 
 This theme is written in [Unibit](https://docs.stackbit.com/unibit/), which is designed to transpile themes to work with multiple static site generators (SSG) such as Jekyll, Hugo & Gatsby.
 
-If you are looking to use this theme on a specific  SSG, it is recommended that you use the [Stackbit site builder](https://app.stackbit.com/create?theme=https://github.com/stackbithq/stackbit-theme-fjord) to generate the theme. The site builder will generate the SSG-specific source to your own GitHub repository. You are free to use and modify the generated source however you wish.
+If you are looking to use this theme on a specific SSG, it is recommended that you use the [Stackbit site builder](https://app.stackbit.com/create?theme=https://github.com/stackbithq/stackbit-theme-fjord) to generate the theme. The site builder will generate the SSG-specific source to your own GitHub repository. You are free to use and modify the generated source however you wish.
 
-### Develop Locally Using Unibit
+### Editing This Theme
 
-While we recommend using the [site builder](https://app.stackbit.com/create?theme=https://github.com/stackbithq/stackbit-theme-fjord) to generate a version of the theme for any of the supported static site generators, you can develop locally using the Unibit CLI. 
+While we recommend using the [site builder](https://app.stackbit.com/create?theme=https://github.com/stackbithq/stackbit-theme-fjord) to generate a version of the theme for any of the supported static site generators, you can develop locally using the Unibit CLI.  For details on how to install and use Unibit, visit the [documentation](https://docs.stackbit.com/site-builder/unibit/).
 
-```
-npm install -g @stackbit/unibit
-```
-
-Start the local development server. 
-
-```
-unibit develop
-```
-
-Compile a production build into the `public` folder.
-
-```
-unibit build
-```
-
-### Develop Locally using CodeSandbox
+### Develop Using CodeSandbox
 
 You can also develop this theme in the browser using Unibit via CodeSandbox.
 
