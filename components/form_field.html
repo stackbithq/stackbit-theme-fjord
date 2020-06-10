@@ -1,18 +1,18 @@
 {% set field = include_dict.field %}
-{% if field.type == 'checkbox' %}
+{% if field.input_type == 'checkbox' %}
 <div class="form-group form-checkbox">
   <input type="checkbox" id="{{ field.name }}" name="{{ field.name }}"{% if field.is_required %} required{% endif %}>
   {% if field.label %}
   <label for="{{ field.name }}">{{ field.label }}</label>
   {% endif %}
 </div>
-{% elif field.type == 'select' %}
+{% elif field.input_type == 'select' %}
 <div class="form-group">
   {% if field.label %}
   <label for="{{ field.name }}">{{ field.label }}</label>
   {% endif %}
   <div class="form-select-wrap">
-    <select name="{{ field.name }}"{% if field.is_required %} required{% endif %}>
+    <select id="{{ field.name }}" name="{{ field.name }}"{% if field.is_required %} required{% endif %}>
       {% if field.default_value %}
       <option value="">{{ field.default_value }}</option>
       {% endif %}
@@ -22,7 +22,7 @@
     </select>
   </div>
 </div>
-{% elif field.type == 'textarea' %}
+{% elif field.input_type == 'textarea' %}
 <div class="form-group">
   {% if field.label %}
   <label for="{{ field.name }}">{{ field.label }}</label>
@@ -34,6 +34,6 @@
   {% if field.label %}
   <label for="{{ field.name }}">{{ field.label }}</label>
   {% endif %}
-  <input type="{{ field.type }}" name="{{ field.name }}" id="{{ field.name }}"{% if field.default_value %} placeholder="{{ field.default_value }}"{% endif %}{% if field.is_required %} required{% endif %} />
+  <input type="{{ field.input_type }}" name="{{ field.name }}" id="{{ field.name }}"{% if field.default_value %} placeholder="{{ field.default_value }}"{% endif %}{% if field.is_required %} required{% endif %} />
 </div>
 {% endif %}

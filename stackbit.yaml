@@ -1,4 +1,4 @@
-stackbitVersion: ~0.2.0
+stackbitVersion: ~0.3.0
 ssgName: unibit
 buildCommand: unibit build
 publishDir: output
@@ -120,7 +120,7 @@ sourceMapping:
     condition: 'context.source.url'
     target:
       file: config.yml
-      fieldPath: params.footer.links[1].type
+      fieldPath: params.footer.links[1].style
 models:
   config:
     type: config
@@ -140,64 +140,76 @@ models:
           - green
           - red
         default: yellow
-      - type: object
+      - type: model
         name: header
         label: Header Configuration
-        fields:
-          - type: string
-            name: title
-            label: Header Title
-            description: >-
-              The title displayed on the left side if no logo image added. If
-              value is not set, the author name will be used.
-          - type: string
-            name: tagline
-            label: Header Tagline
-            description: The tagline displayed on the left side.
-          - type: image
-            name: logo_img
-            label: Logo
-            description: The logo image displayed on the left side.
-          - type: image
-            name: background_img
-            label: Background Image
-            description: The background image displayed on the left side.
-          - type: boolean
-            name: has_nav
-            label: Enable Navigation Menu
-            description: Display the navigation menu bar on the left side.
-            default: true
-          - type: list
-            name: nav_links
-            label: Navigation Links
-            description: List of navigation links.
-            items:
-              type: action
-          - type: boolean
-            name: has_social
-            label: Enable Social Links
-            description: Display social links on the left side.
-            default: true
-          - type: list
-            name: social_links
-            label: Social Links
-            description: List of social links on the left side.
-            items:
-              type: action
-      - type: object
+        models: [header]
+      - type: model
         name: footer
         label: Footer Configuration
-        fields:
-          - type: string
-            name: content
-            label: Footer Content
-            description: The copyright text displayed in the footer.
-          - type: list
-            name: links
-            label: Links
-            description: List of links in the footer.
-            items:
-              type: action
+        models: [footer]
+  header:
+    type: object
+    label: Header Configuration
+    labelField: title
+    fields:
+      - type: string
+        name: title
+        label: Header Title
+        description: >-
+          The title displayed on the left side if no logo image added. If value is not set, the author name will be used.
+      - type: string
+        name: tagline
+        label: Header Tagline
+        description: The tagline displayed on the left side.
+      - type: image
+        name: logo_img
+        label: Logo
+        description: The logo image displayed on the left side.
+      - type: image
+        name: background_img
+        label: Background Image
+        description: The background image displayed on the left side.
+      - type: boolean
+        name: has_nav
+        label: Enable Navigation Menu
+        description: Display the navigation menu bar on the left side.
+        default: true
+      - type: list
+        name: nav_links
+        label: Navigation Links
+        description: List of navigation links.
+        items:
+          type: model
+          models: [action]
+      - type: boolean
+        name: has_social
+        label: Enable Social Links
+        description: Display social links on the left side.
+        default: true
+      - type: list
+        name: social_links
+        label: Social Links
+        description: List of social links on the left side.
+        items:
+          type: model
+          models: [action]
+  footer:
+    type: object
+    label: Footer Configuration
+    labelField: content
+    fields:
+      - type: string
+        name: content
+        label: Footer Content
+        description: The copyright text displayed in the footer.
+      - type: list
+        name: links
+        label: Links
+        description: List of links in the footer.
+        items:
+          type: model
+          models: [action]
   home:
     type: page
     label: Home
@@ -254,7 +266,8 @@ models:
         name: form_fields
         label: Form Fields
         items:
-          type: form_field
+          type: model
+          models: [form_field]
       - type: string
         name: submit_label
         label: Submit Button Label
@@ -338,8 +351,8 @@ models:
         required: true
         widget: url
       - type: enum
-        name: type
-        label: Type
+        name: style
+        label: Style
         options:
           - link
           - icon
@@ -348,7 +361,7 @@ models:
       - type: string
         name: icon_class
         label: Icon
-        description: Font Awesome icon class name, used only when type is "icon".
+        description: Font Awesome icon class name, used only when style is "icon".
       - type: boolean
         name: new_window
         label: Open in new tab/window
@@ -359,7 +372,7 @@ models:
     labelField: name
     fields:
       - type: enum
-        name: type
+        name: input_type
         label: Type
         options:
           - text

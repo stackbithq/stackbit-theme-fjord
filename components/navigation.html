@@ -17,8 +17,8 @@
       <div class="social-links">
         {% for action in site.params.header.social_links %}
         {% if action %}
-        <a {{ classNames({'button-circle': action.type == 'icon'}) }} href="{{ action.url | relative_url }}"{% if action.new_window %} target="_blank" rel="noopener"{% endif %}>
-          {% if action.type == 'icon' and action.icon_class %}
+        <a {{ classNames({'button-circle': action.style == 'icon'}) }} href="{{ action.url | relative_url }}"{% if action.new_window %} target="_blank" rel="noopener"{% endif %}>
+          {% if action.style == 'icon' and action.icon_class %}
           <span class="fab {{ action.icon_class }}" aria-hidden="true"></span><span class="screen-reader-text">{{ action.label }}</span>
           {% else %}
           {{ action.label }}

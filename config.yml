@@ -12,41 +12,41 @@ params:
     nav_links:
       - label: Home
         url: /
-        type: link
+        style: link
       - label: About
         url: /about/
-        type: link
+        style: link
       - label: Style Guide
         url: /style-guide/
-        type: link
+        style: link
       - label: Contact
         url: /contact/
-        type: link
+        style: link
     has_social: true
     social_links:
       - label: Twitter
         url: https://twitter.com/
-        type: icon
+        style: icon
         icon_class: fa-twitter
         new_window: true
       - label: Instagram
         url: https://www.instagram.com/
-        type: icon
+        style: icon
         icon_class: fa-instagram
         new_window: true
       - label: GitHub
         url: https://github.com/
-        type: icon
+        style: icon
         icon_class: fa-github
         new_window: true
       - label: LinkedIn
         url: https://www.linkedin.com/
-        type: icon
+        style: icon
         icon_class: fa-linkedin
         new_window: true
       - label: DEV
         url: https://dev.to/
-        type: icon
+        style: icon
         icon_class: fa-dev
         new_window: true
   footer:
@@ -54,7 +54,7 @@ params:
     links:
       - label: Made with Stackbit.
         url: https://www.stackbit.com
-        type: link
+        style: link
         new_window: true
   palette: yellow
 sass:
