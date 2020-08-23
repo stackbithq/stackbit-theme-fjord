@@ -227,6 +227,14 @@ models:
         name: excerpt
         label: Excerpt
         description: The excerpt of the page displayed in meta data.
+      - type: boolean
+        name: has_more_link
+        label: Display the "Keep reading" link after the post excerpt in the post feed
+        default: true
+      - type: string
+        name: more_link_text
+        label: Custom "Keep reading" link text
+        description: Change the "Keep reading" link text to custom text you want to display
   contact:
     type: page
     label: Contact

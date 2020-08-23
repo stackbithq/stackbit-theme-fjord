@@ -27,9 +27,11 @@
           <div class="post-content">
             <p>{{ post.params.excerpt }}</p>
           </div><!-- .post-content -->
+          {% if page.params.has_more_link == true %}
           <p class="read-more">
-            <a class="read-more-link" href="{{ post.url | relative_url }}">Keep reading <span class="icon-arrow-right" aria-hidden="true"></span></a>
+            <a class="read-more-link" href="{{ post.url | relative_url }}">{{ page.params.more_link_text | default( "Keep reading", true) }} <span class="icon-arrow-right" aria-hidden="true"></span></a>
           </p>
+          {% endif %}
         </article><!-- .post -->
         {% endfor %}
       </div><!-- .post-feed -->
