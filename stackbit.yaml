@@ -229,12 +229,11 @@ models:
         description: The excerpt of the page displayed in meta data.
       - type: boolean
         name: has_more_link
-        label: Display "Keep reading" link in the post feed
+        label: Display the keep reading link in the post feed
         default: true
       - type: string
         name: more_link_text
-        label: Custom "Keep reading" link text
-        description: Change the "Keep reading" link text to custom text you want to display
+        label: Keep reading link label
   contact:
     type: page
     label: Contact
