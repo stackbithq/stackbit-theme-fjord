@@ -212,6 +212,7 @@ models:
           models: [action]
   home:
     type: page
+    urlPath: "/"
     label: Home
     layout: home
     file: index.md
@@ -237,6 +238,7 @@ models:
         label: Keep reading link label
   contact:
     type: page
+    urlPath: "/contact"
     label: Contact
     layout: contact
     file: contact.md
@@ -307,6 +309,7 @@ models:
           specified in Header Configuration is displayed.
   post:
     type: page
+    urlPath: "/posts/{slug}"
     label: Post
     layout: post
     folder: posts

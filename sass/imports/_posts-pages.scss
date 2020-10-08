@@ -2,11 +2,11 @@
  * Posts and Pages
  */
 .post {
-  margin-bottom: 3.33333em;
+  margin-bottom: 2.5em;
 }
 
 .post-header {
-  margin-bottom: 2.5em;
+  margin-bottom: 1.66667em;
 }
 
 .post-title {
@@ -63,7 +63,7 @@
 .post-feed {
   .post {
     border-bottom: 1px dashed _palette(border);
-    padding-bottom: 1.66667em;
+    padding-bottom: 0.83333em;
 
     &:last-child {
       border: 0;
@@ -82,5 +82,21 @@
 
   .post-meta {
     font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .post {
+    margin-bottom: 3.33333em;
+  }
+
+  .post-header {
+    margin-bottom: 2.5em;
+  }
+
+  .post-feed {
+    .post {
+      padding-bottom: 1.66667em;
+    }
   }
 }

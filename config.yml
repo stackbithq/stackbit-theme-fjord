@@ -14,13 +14,13 @@ params:
         url: /
         style: link
       - label: About
-        url: /about/
+        url: /about
         style: link
       - label: Style Guide
-        url: /style-guide/
+        url: /style-guide
         style: link
       - label: Contact
-        url: /contact/
+        url: /contact
         style: link
     has_social: true
     social_links:

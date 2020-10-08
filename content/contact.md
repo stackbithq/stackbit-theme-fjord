@@ -2,6 +2,7 @@
 title: Get in Touch
 img_path: images/contact.jpg
 form_id: contactForm
+form_action: /success
 form_fields:
   - input_type: text
     name: name
