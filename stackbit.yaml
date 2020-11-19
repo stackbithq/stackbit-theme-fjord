@@ -230,7 +230,7 @@ models:
         description: The excerpt of the page displayed in meta data.
       - type: boolean
         name: has_more_link
-        label: Show keep keading link
+        label: Show keep reading link
         description: Display the keep reading link in the post feed
         default: true
       - type: string
