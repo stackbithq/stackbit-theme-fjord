@@ -1,11 +1,11 @@
 /*
-reframe.js - Reframe.js: responsive iframes for embedded content
-@version v2.2.5
-@link https://github.com/dollarshaveclub/reframe.js#readme
-@author Jeff Wainwright <jjwainwright2@gmail.com> (http://jeffry.in)
-@license MIT
-*/
-!function (e, t) { "object" == typeof exports && "undefined" != typeof module ? module.exports = t() : "function" == typeof define && define.amd ? define(t) : e.reframe = t() }(this, function () { "use strict"; function e(e, t) { var i = "string" == typeof e ? document.querySelectorAll(e) : e, n = t || "js-reframe"; "length" in i || (i = [i]); for (var o = 0; o < i.length; o += 1) { var r = i[o]; if (!(-1 !== r.className.split(" ").indexOf(n))) { var d = r.getAttribute("height"), f = r.getAttribute("width"); if (!(f.indexOf("%") > -1 || r.style.width.indexOf("%") > -1)) { var a = (d || r.offsetHeight) / (f || r.offsetWidth) * 100, s = document.createElement("div"); s.className = n; var l = s.style; l.position = "relative", l.width = "100%", l.paddingTop = a + "%"; var p = r.style; p.position = "absolute", p.width = "100%", p.height = "100%", p.left = "0", p.top = "0", r.parentNode.insertBefore(s, r), r.parentNode.removeChild(r), s.appendChild(r) } } } } return e });
+  reframe.js - Reframe.js: responsive iframes for embedded content
+  @version v3.0.2
+  @link https://github.com/yowainwright/reframe.ts#readme
+  @author Jeff Wainwright <yowainwright@gmail.com> (http://jeffry.in)
+  @license MIT
+ */
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).reframe=t()}(this,function(){"use strict";function t(){for(var e=0,t=0,n=arguments.length;t<n;t++)e+=arguments[t].length;for(var i=Array(e),o=0,t=0;t<n;t++)for(var r=arguments[t],f=0,d=r.length;f<d;f++,o++)i[o]=r[f];return i}return function(e,s){return void 0===s&&(s="js-reframe"),("string"==typeof e?t(document.querySelectorAll(e)):"length"in e?t(e):[e]).forEach(function(e){var t,n,i,o,r,f,d,l;-1!==e.className.split(" ").indexOf(s)||-1<e.style.width.indexOf("%")||(i=e.getAttribute("height")||e.offsetHeight,o=e.getAttribute("width")||e.offsetWidth,r=("string"==typeof i?parseInt(i):i)/("string"==typeof o?parseInt(o):o)*100,(f=document.createElement("div")).className=s,(d=f.style).position="relative",d.width="100%",d.paddingTop=r+"%",(l=e.style).position="absolute",l.width="100%",l.height="100%",l.left="0",l.top="0",null!==(t=e.parentNode)&&void 0!==t&&t.insertBefore(f,e),null!==(n=e.parentNode)&&void 0!==n&&n.removeChild(e),f.appendChild(e))})}});
 
 /*!
  * imagesLoaded PACKAGED v4.1.4
