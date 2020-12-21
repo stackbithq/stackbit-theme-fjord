@@ -126,20 +126,21 @@ models:
     type: config
     label: Site Configuration
     fields:
-      - type: string
-        name: description
-        label: Site Description
-        description: The default site description used in meta data.
+      - type: image
+        name: favicon
+        label: Favicon
+        description: A square icon that represents your website
       - type: enum
         name: palette
         label: Color Palette
-        description: The color palette of the theme.
+        description: The color palette of the theme
         options:
           - yellow
           - blue
           - green
           - red
         default: yellow
+        required: true
       - type: model
         name: header
         label: Header Configuration
@@ -157,40 +158,45 @@ models:
         name: title
         label: Header Title
         description: >-
-          The title displayed on the left side if no logo image added. If value is not set, the author name will be used.
+          The title displayed on the left side if no logo image added.
+          If value is not set, the author name will be used.
       - type: string
         name: tagline
         label: Header Tagline
-        description: The tagline displayed on the left side.
+        description: The tagline displayed on the left side
       - type: image
         name: logo_img
         label: Logo
-        description: The logo image displayed on the left side.
+        description: The logo image displayed on the left side
+      - type: string
+        name: logo_img_alt
+        label: Logo Alt Text
+        description: The alt text of the logo image
       - type: image
         name: background_img
         label: Background Image
-        description: The background image displayed on the left side.
+        description: The image displayed in the background of the left side
       - type: boolean
         name: has_nav
         label: Enable Navigation Menu
-        description: Display the navigation menu bar on the left side.
+        description: Display the navigation menu bar on the left side
         default: true
       - type: list
         name: nav_links
         label: Navigation Links
-        description: List of navigation links.
+        description: List of navigation links
         items:
           type: model
           models: [action]
       - type: boolean
         name: has_social
         label: Enable Social Links
-        description: Display social links on the left side.
+        description: Display social links on the left side
         default: true
       - type: list
         name: social_links
         label: Social Links
-        description: List of social links on the left side.
+        description: List of social links
         items:
           type: model
           models: [action]
@@ -202,11 +208,11 @@ models:
       - type: string
         name: content
         label: Footer Content
-        description: The copyright text displayed in the footer.
+        description: The copyright text displayed in the footer
       - type: list
         name: links
         label: Links
-        description: List of links in the footer.
+        description: List of links in the footer
         items:
           type: model
           models: [action]
@@ -222,12 +228,12 @@ models:
       - type: string
         name: title
         label: Title
-        description: The title of the page.
+        description: The title of the page
         required: true
       - type: string
         name: excerpt
         label: Excerpt
-        description: The excerpt of the page displayed in meta data.
+        description: The excerpt of the page displayed in meta data
       - type: boolean
         name: has_more_link
         label: Show keep reading link
@@ -247,31 +253,33 @@ models:
       - type: string
         name: title
         label: Title
-        description: The title of the page.
+        description: The title of the page
         required: true
       - type: string
         name: subtitle
         label: Subtitle
-        description: The text shown just below the page title.
+        description: The text shown just below the page title
       - type: string
         name: excerpt
         label: Excerpt
-        description: The excerpt of the page displayed in meta data.
+        description: The excerpt of the page displayed in meta data
       - type: image
         name: img_path
-        label: Image
+        label: Background Image
         description: >-
-          The image shown on the left side. If no image added, the default image
-          specified in Header Configuration is displayed.
+          The background image of the left side. If no image added,
+          the default image specified in Header Configuration is displayed.
       - type: string
         name: form_id
         label: Form ID
-        description: A unique identifier of the form. Must not contain whitespace.
+        description: A unique identifier of the form, must not contain whitespace
         required: true
       - type: string
         name: form_action
         label: Form Action
-        description: The path of your custom "success" page, if you want to replace the default success message.
+        description: >-
+          The path of your custom "success" page, if you want to replace
+          the default success message
       - type: list
         name: form_fields
         label: Form Fields
@@ -291,22 +299,22 @@ models:
       - type: string
         name: title
         label: Title
-        description: The title of the page.
+        description: The title of the page
         required: true
       - type: string
         name: subtitle
         label: Subtitle
-        description: The text shown just below the page title.
+        description: The text shown just below the page title
       - type: string
         name: excerpt
         label: Excerpt
-        description: The excerpt of the page displayed in meta data.
+        description: The excerpt of the page displayed in meta data
       - type: image
         name: img_path
-        label: Image
+        label: Background Image
         description: >-
-          The image shown on the left side. If no image added, the default image
-          specified in Header Configuration is displayed.
+          The background image of the left side. If no image added, the
+          default image specified in Header Configuration is displayed.
   post:
     type: page
     urlPath: "/posts/{slug}"
@@ -317,35 +325,39 @@ models:
       - type: string
         name: title
         label: Title
-        description: The title of the post.
+        description: The title of the post
         required: true
       - type: string
         name: subtitle
         label: Subtitle
-        description: The text shown just below the post title.
+        description: The text shown just below the post title
       - type: date
         name: date
         label: Date
         required: true
       - type: image
         name: thumb_img_path
-        label: Featured Image
-        description: The image shown in the blog feed.
+        label: Image (Blog Feed)
+        description: The image shown in the blog feed
+      - type: string
+        name: thumb_img_alt
+        label: Image Alt Text (Blog Feed)
+        description: The alt text of the blog feed image
       - type: image
         name: content_img_path
-        label: Alternative Featured Image
+        label: Background Image (Single Post)
         description: >-
-          The image shown on the left side in the single post. If no image
-          added, the default image specified in Header Configuration is
-          displayed.
+          The background image of the left side in the single post.
+          If no image added, the default image specified in Header
+          Configuration is displayed.
       - type: string
         name: excerpt
         label: Excerpt
-        description: The excerpt of the post displayed in the blog feed and meta data.
+        description: The excerpt of the post displayed in the blog feed and meta data
       - type: boolean
         name: hide_header
-        label: Hide header
-        description: Hide the left side in the single post.
+        label: Hide sidebar
+        description: Hide the left side in the single post
         default: false
   action:
     type: object
@@ -369,14 +381,29 @@ models:
           - icon
         default: link
         required: true
-      - type: string
+      - type: enum
         name: icon_class
         label: Icon
-        description: Font Awesome icon class name, used only when style is "icon".
+        options:
+          - dev
+          - facebook
+          - github
+          - instagram
+          - linkedin
+          - pinterest
+          - reddit
+          - twitter
+          - vimeo
+          - youtube
       - type: boolean
         name: new_window
         label: Open in new tab/window
         default: false
+      - type: boolean
+        name: no_follow
+        label: No follow
+        default: false
+        description: 'Add rel="nofollow" attribute to the link'
   form_field:
     type: object
     label: Form Field
@@ -393,23 +420,23 @@ models:
           - checkbox
           - textarea
           - select
-        description: Type of the form field.
+        description: Type of the form field
         required: true
       - type: string
         name: name
         label: Name
-        description: The name of the field, submitted with the form.
+        description: The name of the field, submitted with the form
         required: true
       - type: string
         name: label
         label: Label
-        description: The caption of the field, shown above the field input.
+        description: The caption of the field, shown above the field input
       - type: string
         name: default_value
-        description: The default value for textual field types.
+        description: The placeholder for textual field types or default option for select field
       - type: list
         name: options
-        description: The list of options, used only when the field type is "select".
+        description: The list of options for select field
       - type: boolean
         name: is_required
         label: Is the field required?

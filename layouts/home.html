@@ -9,43 +9,36 @@
     <main id="main" class="site-main inner">
 
       <div class="post-feed">
-        {% set display_posts = getPages("/posts") | sort(true, true, "date") %}
-        {% for post in display_posts %}
-        <article class="post">
-          <header class="post-header">
-            <h2 class="post-title"><a href="{{ post.url | relative_url }}" rel="bookmark">{{ post.params.title }}</a></h2>
-            <div class="post-meta">
-              Published on <time class="published"
-                datetime="{{post.date | date_format("%Y-%m-%d %H:%M") }}">{{ post.date | date_format("%B %d, %Y") }}</time>
-            </div>
-          </header><!-- .post-header -->
-          {% if post.params.thumb_img_path %}
-          <a class="post-thumbnail" href="{{ post.url | relative_url }}">
-            <img class="thumbnail" src="{{ post.params.thumb_img_path | relative_url }}" alt="{{ post.params.title }}" />
-          </a>
-          {% endif %}
-          <div class="post-content">
-            <p>{{ post.params.excerpt }}</p>
-          </div><!-- .post-content -->
-          {% if page.params.has_more_link == true and page.params.more_link_text %}
-          <p class="read-more">
-            <a class="read-more-link" href="{{ post.url | relative_url }}">{{ page.params.more_link_text }} <span class="icon-arrow-right" aria-hidden="true"></span></a>
-          </p>
-          {% endif %}
-        </article><!-- .post -->
-        {% endfor %}
+        {% set posts = getPages("/posts") %}
+        {% set posts_count = posts | length %}
+        {% if posts_count > 0 %}
+          {% set posts_sorted = posts | sort(true, true, "date") %}
+          {% for post in posts_sorted %}
+          <article class="post">
+            <header class="post-header">
+              <h2 class="post-title"><a href="{{ post.url | relative_url }}" rel="bookmark">{{ post.params.title }}</a></h2>
+              <div class="post-meta">
+                Published on <time class="published"
+                  datetime="{{post.date | date_format("%Y-%m-%d %H:%M") }}">{{ post.date | date_format("%B %d, %Y") }}</time>
+              </div>
+            </header><!-- .post-header -->
+            {% if post.params.thumb_img_path %}
+            <a class="post-thumbnail" href="{{ post.url | relative_url }}">
+              <img class="thumbnail" src="{{ post.params.thumb_img_path | relative_url }}" alt="{{ post.params.thumb_img_alt }}" />
+            </a>
+            {% endif %}
+            <div class="post-content">
+              <p>{{ post.params.excerpt }}</p>
+            </div><!-- .post-content -->
+            {% if page.params.has_more_link == true and page.params.more_link_text %}
+            <p class="read-more">
+              <a class="read-more-link" href="{{ post.url | relative_url }}">{{ page.params.more_link_text }} <span class="icon-arrow-right" aria-hidden="true"></span></a>
+            </p>
+            {% endif %}
+          </article><!-- .post -->
+          {% endfor %}
+        {% endif %}
       </div><!-- .post-feed -->
-
-      <!-- Pagination TBD -->
-      <!--
-      <nav class="pagination">
-        <div class="nav-links">
-          <a class="older-posts button" href="#"><span class="icon-arrow-left" aria-hidden="true"></span><span class="screen-reader-text">Older posts</span></a>
-          <span class="page-number">Page X of Y</span>
-          <a class="newer-posts button" href="#"><span class="screen-reader-text">Newer posts</span><span class="icon-arrow-right" aria-hidden="true"></span></a>
-        </div>
-      </nav>
-      -->
 
     </main><!-- .site-main -->
 

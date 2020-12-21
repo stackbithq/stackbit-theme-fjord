@@ -422,8 +422,7 @@ img {
 
 /* Text meant only for screen readers */
 .screen-reader-text,
-.site-logo + .site-title,
-.site-logo + .site-title + .site-description {
+.site-logo + .site-title {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;

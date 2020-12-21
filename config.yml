@@ -2,11 +2,12 @@ baseurl: "/"
 title: "Stackbit Fjord Theme"
 page_load_js: "assets/js/main.js"
 params:
-  description: A minimal blogging theme for Stackbit
+  palette: yellow
   header:
     title: Fjord
     tagline: Minimal and clean blog theme
-    logo_img: "images/logo.png"
+    logo_img: "images/logo.svg"
+    logo_img_alt: Fjord Logo
     background_img: "images/header-bg.jpg"
     has_nav: true
     nav_links:
@@ -27,35 +28,36 @@ params:
       - label: Twitter
         url: https://twitter.com/
         style: icon
-        icon_class: fa-twitter
+        icon_class: twitter
         new_window: true
       - label: Instagram
         url: https://www.instagram.com/
         style: icon
-        icon_class: fa-instagram
+        icon_class: instagram
         new_window: true
       - label: GitHub
         url: https://github.com/
         style: icon
-        icon_class: fa-github
+        icon_class: github
         new_window: true
       - label: LinkedIn
         url: https://www.linkedin.com/
         style: icon
-        icon_class: fa-linkedin
+        icon_class: linkedin
         new_window: true
       - label: DEV
         url: https://dev.to/
         style: icon
-        icon_class: fa-dev
+        icon_class: dev
         new_window: true
   footer:
     content: >-
       &copy; Stackbit. All rights reserved. This Jamstack site was created on <a href="https://www.stackbit.com" target="_blank" rel="noopener">Stackbit</a>. Get yours <a href="https://app.stackbit.com/create?theme=fjord" target="_blank" rel="noopener">here</a>.
-  palette: yellow
 sass:
   input_file: sass/main.scss.njk
   output_file: assets/css/main.css
   indentWidth: 4
   outputStyle: nested
   precision: 10
+templates:
+  body_class: "palette-{{ site.params.palette }}"

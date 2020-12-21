@@ -1,8 +1,7 @@
 <div class="site-branding">
   {% if site.params.header.logo_img %}
   <p class="site-logo">
-    <a href='{{ "/" | relative_url }}'><img src="{{ site.params.header.logo_img | relative_url }}"
-        alt="{{ site.params.header.title }} Logo" /></a>
+    <a href='{{ "/" | relative_url }}'><img src="{{ site.params.header.logo_img | relative_url }}" alt="{{ site.params.header.logo_img_alt }}" /></a>
   </p>
   {% endif %}
   {% if page.layout == "home" %}

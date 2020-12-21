@@ -9,7 +9,9 @@
           {% set pageUrl = page.url | trim('/') %}
           {% set actionUrl = action.url | trim('/') %}
           <li {{ classNames('menu-item', {'current-menu-item': pageUrl == actionUrl }) }}>
-            <a href="{{ action.url | relative_url }}"{% if action.new_window %} target="_blank" rel="noopener"{% endif %}>{{ action.label }}</a>
+            <a href="{{ action.url | relative_url }}"
+              {% if action.new_window %} target="_blank"{% endif %}
+              {% if action.new_window or action.no_follow %} rel="{% if action.new_window %}noopener {% endif %}{% if action.no_follow %}nofollow{% endif %}"{% endif %}>{{ action.label }}</a>
           </li>
         {% endfor %}
       </ul>
@@ -19,9 +21,14 @@
       <div class="social-links">
         {% for action in site.params.header.social_links %}
         {% if action %}
-        <a {{ classNames({'button-circle': action.style == 'icon'}) }} href="{{ action.url | relative_url }}"{% if action.new_window %} target="_blank" rel="noopener"{% endif %}>
+        <a href="{{ action.url | relative_url }}"
+          {% if action.new_window %} target="_blank"{% endif %}
+          {% if action.new_window or action.no_follow %} rel="{% if action.new_window %}noopener {% endif %}{% if action.no_follow %}nofollow{% endif %}"{% endif %}
+          {{ classNames({'button-circle': action.style == 'icon'}) }}>
           {% if action.style == 'icon' and action.icon_class %}
-          <span class="fab {{ action.icon_class }}" aria-hidden="true"></span><span class="screen-reader-text">{{ action.label }}</span>
+            {% set include_dict = {'icon': action.icon_class} %}
+            {% include "icon.html" %}
+            <span class="screen-reader-text">{{ action.label }}</span>
           {% else %}
           {{ action.label }}
           {% endif %}
@@ -36,4 +43,3 @@
 </nav><!-- .site-navigation -->
 <button id="menu-toggle" class="menu-toggle"><span class="screen-reader-text">Menu</span><span class="icon-menu" aria-hidden="true"></span></button>
 {% endif %}
-

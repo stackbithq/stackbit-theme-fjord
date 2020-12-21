@@ -1,11 +1,11 @@
 <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="{{ page.params.excerpt | default( site.params.description, true) }}"/>
-<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+<meta name="google" content="notranslate" />
+<meta name="description" content="{{ page.params.excerpt }}"/>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ 'assets/css/main.css' | relative_url }}">
-{% if page.layout == "post" %}
-{% if page.params.canonical_url %}
-<link rel="canonical" href="{{ page.params.canonical_url }}"/>
-{% endif %}
+{% if site.params.favicon %}
+<link rel="icon" href="{{ site.params.favicon | relative_url }}">
 {% endif %}
