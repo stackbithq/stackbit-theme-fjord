@@ -12,9 +12,9 @@ Click the button below to use this theme in Gatsby, Hugo or Jekyll via the Stack
 
 ## Working with This Theme
 
-This theme is written in [Unibit](https://docs.stackbit.com/unibit/), which is designed to transpile themes to work with multiple static site generators (SSG) such as Jekyll, Hugo & Gatsby.
+This theme is written in Unibit. Themes written in Unibit can be converted to other static sites generators (SSG) such as Gatsby, Hugo, Jekyll and Next.js using [Stackbit Site Builder](https://app.stackbit.com/create?theme=https://github.com/stackbithq/stackbit-theme-fjord). The site builder will generate the SSG-specific version of this theme and push it to your own GitHub repository. You are free to use and modify the generated source however you wish.
 
-If you are looking to use this theme on a specific SSG, it is recommended that you use the [Stackbit site builder](https://app.stackbit.com/create?theme=https://github.com/stackbithq/stackbit-theme-fjord) to generate the theme. The site builder will generate the SSG-specific source to your own GitHub repository. You are free to use and modify the generated source however you wish.
+<img src="https://assets.stackbit.com/images/unibit-diagram.png" width="600" />
 
 ### Editing This Theme
 
