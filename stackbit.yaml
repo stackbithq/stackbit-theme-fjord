@@ -126,6 +126,10 @@ models:
     type: config
     label: Site Configuration
     fields:
+      - type: string
+        name: domain
+        label: Domain
+        description: The domain of your site, including the protocol, e.g. https://mysite.com/
       - type: image
         name: favicon
         label: Favicon
@@ -230,10 +234,6 @@ models:
         label: Title
         description: The title of the page
         required: true
-      - type: string
-        name: excerpt
-        label: Excerpt
-        description: The excerpt of the page displayed in meta data
       - type: boolean
         name: has_more_link
         label: Show keep reading link
@@ -242,6 +242,9 @@ models:
       - type: string
         name: more_link_text
         label: Keep reading link label
+      - type: model
+        name: seo
+        models: [stackbit_page_meta]
   contact:
     type: page
     urlPath: "/contact"
@@ -259,10 +262,6 @@ models:
         name: subtitle
         label: Subtitle
         description: The text shown just below the page title
-      - type: string
-        name: excerpt
-        label: Excerpt
-        description: The excerpt of the page displayed in meta data
       - type: image
         name: img_path
         label: Background Image
@@ -290,6 +289,9 @@ models:
         name: submit_label
         label: Submit Button Label
         required: true
+      - type: model
+        name: seo
+        models: [stackbit_page_meta]
   page:
     type: page
     label: Page
@@ -305,16 +307,15 @@ models:
         name: subtitle
         label: Subtitle
         description: The text shown just below the page title
-      - type: string
-        name: excerpt
-        label: Excerpt
-        description: The excerpt of the page displayed in meta data
       - type: image
         name: img_path
         label: Background Image
         description: >-
           The background image of the left side. If no image added, the
           default image specified in Header Configuration is displayed.
+      - type: model
+        name: seo
+        models: [stackbit_page_meta]
   post:
     type: page
     urlPath: "/posts/{slug}"
@@ -353,12 +354,15 @@ models:
       - type: string
         name: excerpt
         label: Excerpt
-        description: The excerpt of the post displayed in the blog feed and meta data
+        description: The excerpt of the post displayed in the blog feed
       - type: boolean
         name: hide_header
         label: Hide sidebar
         description: Hide the left side in the single post
         default: false
+      - type: model
+        name: seo
+        models: [stackbit_page_meta]
   action:
     type: object
     label: Action
@@ -441,3 +445,50 @@ models:
         name: is_required
         label: Is the field required?
         default: false
+  stackbit_page_meta:
+    type: object
+    label: Page meta data
+    fields:
+      - type: string
+        name: title
+        label: Title
+        description: 'The page title that goes into the <title> tag'
+        default: ""
+      - type: string
+        name: description
+        label: Description
+        description: 'The page description that goes into the <meta name="description"> tag'
+        default: ""
+      - type: list
+        name: robots
+        label: Robots
+        description: 'The items that go into the <meta name="robots"> tag'
+        items:
+          type: enum
+          options:
+            - all
+            - index
+            - follow
+            - noindex
+            - nofollow
+            - noimageindex
+            - notranslate
+            - none
+          default: all
+      - type: list
+        name: extra
+        label: Extra
+        description: 'Additional definition for specific meta tags such as open-graph, twitter, etc.'
+        items:
+          type: object
+          labelField: name
+          fields:
+            - type: string
+              name: name
+            - type: string
+              name: value
+            - type: string
+              name: keyName
+              default: name
+            - type: boolean
+              name: relativeUrl

@@ -1,8 +1,24 @@
-<title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+<title>{% if page.params.seo.title %}{{ page.params.seo.title }}{% else %}{{ page.title | append(' | ') | append( site.title ) }}{% endif %}</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google" content="notranslate" />
-<meta name="description" content="{{ page.params.excerpt }}"/>
+<meta name="description" content="{{ page.params.seo.description | default('', true) }}" />
+{% if page.params.seo.robots %}
+<meta name="robots" content="{{ page.params.seo.robots | join(',') }}">
+{% endif %}
+{% for meta in page.params.seo.extra %}
+  {% set key_name = meta.keyName | default('name', true) %}
+  {% if meta.relativeUrl %}
+    {% if site.params.domain %}
+      {% set domain = site.params.domain | trim('/') %}
+      {% set rel_url = meta.value | relative_url %}
+      {% set full_url = domain | append(rel_url) %}
+      <meta {{ attribute(key_name, meta.name) }} content="{{ full_url }}">
+    {% endif %}
+  {% else %}
+    <meta {{ attribute(key_name, meta.name) }} content="{{ meta.value }}">
+  {% endif %}
+{% endfor %}
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ 'assets/css/main.css' | relative_url }}">
