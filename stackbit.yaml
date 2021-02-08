@@ -485,8 +485,10 @@ models:
           fields:
             - type: string
               name: name
+              default: ""
             - type: string
               name: value
+              default: ""
             - type: string
               name: keyName
               default: name

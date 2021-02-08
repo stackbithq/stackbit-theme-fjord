@@ -7,6 +7,32 @@ excerpt: >-
 date: 2018-01-15
 thumb_img_path: images/8.jpg
 content_img_path: images/8.jpg
+seo:
+  title: What Is Photography and What It Means To Me
+  description: A intresting tale about Photography and me
+  extra:
+    - name: og:type
+      value: website
+      keyName: property
+    - name: og:title
+      value: What Is Photography and What It Means To Me
+      keyName: property
+    - name: og:description
+      value: A intresting tale about Photography and me
+      keyName: property
+    - name: og:image
+      value: images/8.jpg
+      keyName: property
+      relativeUrl: true
+    - name: twitter:card
+      value: summary_large_image
+    - name: twitter:title
+      value: What Is Photography and What It Means To Me
+    - name: twitter:description
+      value: A intresting tale about Photography and me
+    - name: twitter:image
+      value: images/8.jpg
+      relativeUrl: true
 layout: post
 ---
 

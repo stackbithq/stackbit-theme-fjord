@@ -1,5 +1,9 @@
 ---
 title: Thank You!
+seo:
+  robots:
+    - noindex
+    - nofollow
 layout: page
 ---
 
