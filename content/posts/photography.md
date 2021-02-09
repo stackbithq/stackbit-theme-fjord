@@ -6,6 +6,7 @@ excerpt: >-
   Photography is the science, art and practice of creating durable images by recording light or other electromagnetic radiation, either electronically by means of an image sensor, or chemically by means of a light-sensitive material such as photographic film.
 date: 2018-01-15
 thumb_img_path: images/8.jpg
+thumb_img_alt: A man looking at a beautiful lake and mountains landscape in Switzerland
 content_img_path: images/8.jpg
 seo:
   title: What Is Photography and What It Means To Me
