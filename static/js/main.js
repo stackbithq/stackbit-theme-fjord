@@ -38,9 +38,3 @@ if (header) {
     header.classList.add('bg--loaded');
   }
 }
-
-// Back to top
-document.querySelector('#to-top').addEventListener('click', function (e) {
-  e.preventDefault();
-  document.querySelector('#page').scrollIntoView({ behavior: 'smooth' });
-});
