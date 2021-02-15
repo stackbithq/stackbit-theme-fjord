@@ -11,7 +11,7 @@ seo:
   description: Work at home parent is an entrepreneur who works from home and integrates parenting into his or her business activities
   extra:
     - name: og:type
-      value: website
+      value: article
       keyName: property
     - name: og:title
       value: The Advantages and Disadvantages of Working from Home

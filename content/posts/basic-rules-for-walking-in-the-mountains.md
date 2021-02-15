@@ -11,7 +11,7 @@ seo:
   description: Hiking refers to difficult walking through dense forest, undergrowth, or bushes.
   extra:
     - name: og:type
-      value: website
+      value: article
       keyName: property
     - name: og:title
       value: Basic Rules For Walking In The Mountains

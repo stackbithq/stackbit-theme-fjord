@@ -11,7 +11,7 @@ seo:
   description: Iceland is a Nordic country between the North Atlantic and the Arctic Ocean.
   extra:
     - name: og:type
-      value: website
+      value: article
       keyName: property
     - name: og:title
       value: Fragments of Iceland

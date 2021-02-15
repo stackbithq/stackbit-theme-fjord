@@ -13,7 +13,7 @@ seo:
   description: A intresting tale about Photography and me
   extra:
     - name: og:type
-      value: website
+      value: article
       keyName: property
     - name: og:title
       value: What Is Photography and What It Means To Me

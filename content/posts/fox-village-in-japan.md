@@ -13,7 +13,7 @@ seo:
   description: Apparently, Japan is covered in magical and irresistibly cute animal sanctuaries.
   extra:
     - name: og:type
-      value: website
+      value: article
       keyName: property
     - name: og:title
       value: Fox Village In Japan

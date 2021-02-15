@@ -13,7 +13,7 @@ seo:
   description: A cautionary tale about life in New York
   extra:
     - name: og:type
-      value: website
+      value: article
       keyName: property
     - name: og:title
       value: Few Things I Wish I Knew Before I Moved to New York

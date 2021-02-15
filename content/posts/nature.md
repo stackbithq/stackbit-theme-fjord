@@ -13,7 +13,7 @@ seo:
   description: The way I spend time out in nature can affect how much my physical and mental health will recharge.
   extra:
     - name: og:type
-      value: website
+      value: article
       keyName: property
     - name: og:title
       value: My Way to Relax in Nature and Stress Less
