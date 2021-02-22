@@ -103,24 +103,24 @@ sourceMapping:
       fieldPath: 'source.title'
     target:
       file: config.yml
-      fieldPath: params.footer.links[1].label
+      fieldPath: params.footer.links[0].label
   - source:
       fieldPath: 'source.url'
     target:
       file: config.yml
-      fieldPath: params.footer.links[1].url
+      fieldPath: params.footer.links[0].url
   - source:
       value: true
     condition: 'context.source.url'
     target:
       file: config.yml
-      fieldPath: params.footer.links[1].new_window
+      fieldPath: params.footer.links[0].new_window
   - source:
       value: 'link'
     condition: 'context.source.url'
     target:
       file: config.yml
-      fieldPath: params.footer.links[1].style
+      fieldPath: params.footer.links[0].style
 models:
   config:
     type: config
